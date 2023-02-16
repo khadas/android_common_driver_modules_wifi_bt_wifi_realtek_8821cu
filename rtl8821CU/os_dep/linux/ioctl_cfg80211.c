@@ -2708,12 +2708,12 @@ static int cfg80211_rtw_get_station(struct wiphy *wiphy,
 		sta_set_rate_info(padapter, &sinfo->rxrate, rtw_rate_idx, sgi, bw);
 #endif
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 37))
-		if (rtw_get_sta_tx_stat(padapter, psta->cmn.mac_id, psta->cmn.mac_addr) != RTW_NOT_SUPPORT) {
+//		if (rtw_get_sta_tx_stat(padapter, psta->cmn.mac_id, psta->cmn.mac_addr) != RTW_NOT_SUPPORT) {
 			sinfo->filled |= STATION_INFO_TX_FAILED;
 			sinfo->filled |= STATION_INFO_TX_RETRIES;
 			sinfo->tx_failed = psta->sta_stats.tx_fail_cnt_sum;
 			sinfo->tx_retries = psta->sta_stats.tx_retry_cnt_sum;
-		}
+//		}
 #endif
 	}
 
